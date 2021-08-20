@@ -1,0 +1,29 @@
+<script>
+function lw() {
+
+var i = document.getElementById("in1").value
+
+var xhr = new XMLHttpRequest();
+
+// xhr.onload
+xhr.open("GET","http://13.127.197.183/cgi-bin/lw.py?x=" +i, true);
+
+xhr.send();
+
+// output from above url
+
+xhr.onload = function() {
+        var output = xhr.responseText;
+        document.getElementById("d1").innerHTML = output;
+}
+}
+</script>
+[root@localhost ~]# <input id="in1" />
+<br />
+<pre>
+<div id="d1">here we have output ...</div>
+</pre>
+
+<button onclick="lw()">click</button>
+
+<div id="d2" onclick="alert('hi');">div2</div>
